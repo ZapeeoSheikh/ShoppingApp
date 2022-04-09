@@ -6,39 +6,28 @@ using System.Web.Mvc;
 
 namespace ShoppingApp.Controllers
 {
-    public class ProductController : Controller
+    public class OrderController : Controller
     {
-        // GET: Product
+        // GET: Order
         public ActionResult Index()
         {
             return View();
         }
-        public ActionResult Product()
+        public ActionResult Order()
         {
             return View();
         }
-        public ActionResult PView()
+        public ActionResult OrderStatus()
         {
             return View();
         }
-        public ActionResult ProductStatus()
+        public ActionResult Role()
         {
             return View();
         }
-        public ActionResult PSView()
+        public ActionResult User()
         {
             return View();
         }
-        public ActionResult ProductImage()
-        {
-            return View();
-        }
-        public ActionResult PIView()
-        {
-            return View();
-        }
-
-
-
     }
 }
