@@ -13,6 +13,7 @@
             <th>Product Image</th>
             <th>Seller Id</th>
             <th>Product Status Id</th>
+            <th>Actions</th>
         </tr>
     </thead>
     @foreach (var i in Model)
@@ -20,21 +21,21 @@
         <tbody>
             <tr>
                 <td>@i.Id</td>
-            </tr>
-            <tr>
+
                 <td>@i.Name</td>
-            </tr>
-            <tr>
+
                 <td>@i.Description</td>
-            </tr>
-            <tr>
+
                 <td>@i.Image</td>
-            </tr>
-            <tr>
+
                 <td>@i.SellerId</td>
-            </tr>
-            <tr>
+
                 <td>@i.ProductStatusId</td>
+                <td>
+                    <a href="/Account/PView"><span class="glyphicon glyphicon-eye-open"></span> </a> |
+                    <a href="/Account/PEdit"><span class="glyphicon glyphicon-pencil"></span> </a> |
+                    <a href="/Account/PDelete"><span class="glyphicon glyphicon-trash"></span> </a>
+                </td>
             </tr>
         </tbody>
     }

@@ -14,6 +14,87 @@
     </div>
     <div class="panel-group ">
         <div class="col-lg-3">
+            <div class="panel panel-danger">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" href="#collapse3">Product Status Form</a>
+                    </h4>
+                </div>
+                <div id="collapse3" class="panel-collapse collapse">
+
+
+
+                    <div class="panel  panel-primary ">
+                        <div class="panel-heading">
+                            Set Product Status
+                        </div>
+                        <div class="panel-body">
+                            <form action="/Account/ProductStatus" method="post">
+                                <div class="form-group">
+                                    <label for="name"> Product Name :</label>
+                                    <input type="text" class="form-control" id="name" name="Name">
+                                </div>
+
+                                <button type="submit" class="btn btn-primary">Add Now</button>
+                            </form>
+                        </div>
+                    </div>
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="panel panel-warning">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" href="#collapse7">User Form </a>
+                    </h4>
+                </div>
+                <div id="collapse7" class="panel-collapse collapse">
+
+
+
+                    <div class="panel  panel-success ">
+                        <div class="panel-heading">
+                            Set User Details
+                        </div>
+                        <div class="panel-body">
+                            <form action="/Account/User" method="post">
+                                <div class="form-group">
+                                    <label for="name"> User Name :</label>
+                                    <input type="text" class="form-control" id="name" name="Name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="email"> User Email :</label>
+                                    <input type="text" class="form-control" id="email" name="Email">
+                                </div>
+                                <div class="form-group">
+                                    <label for="pwd"> User Password :</label>
+                                    <input type="password" class="form-control" id="pwd" name="Password">
+                                </div>
+                                <div class="form-group">
+                                    <label for="role"> User Role Id :</label>
+                                    <input type="text" class="form-control" id="role" name="RoleId">
+                                </div>
+
+                                <button type="submit" class="btn btn-danger">Add Now</button>
+                            </form>
+                        </div>
+                    </div>
+
+
+
+
+
+                </div>
+            </div>
+
+        </div>
+        <div class="col-lg-3">
             <div class="panel panel-primary ">
                 <div class="panel-heading">
                     <h4 class="panel-title">
@@ -35,8 +116,8 @@
                                     <input type="text" class="form-control" id="email" name="Name">
                                 </div>
                                 <div class="form-group">
-                                    <label for="ps">Product Status :</label>
-                                    <input type="password" class="form-control" id="ps" name="ProductStatus">
+                                    <label for="ps">Product Status Id:</label>
+                                    <input type="text" class="form-control" id="ps" name="ProductStatus">
                                 </div>
                                 <div class="form-group">
                                     <label for="desc">Product Description :</label>
@@ -92,40 +173,6 @@
                                     <input type="text" class="form-control" id="img" name="Image">
                                 </div>
                                 <button type="submit" class="btn btn-danger">Add Now</button>
-                            </form>
-                        </div>
-                    </div>
-
-
-
-
-
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3">
-            <div class="panel panel-danger">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" href="#collapse3">Product Status Form</a>
-                    </h4>
-                </div>
-                <div id="collapse3" class="panel-collapse collapse">
-
-
-
-                    <div class="panel  panel-primary ">
-                        <div class="panel-heading">
-                            Set Product Status
-                        </div>
-                        <div class="panel-body">
-                            <form action="/Account/ProductStatus" method="post">
-                                <div class="form-group">
-                                    <label for="name"> Product Name :</label>
-                                    <input type="text" class="form-control" id="name" name="Name">
-                                </div>
-
-                                <button type="submit" class="btn btn-primary">Add Now</button>
                             </form>
                         </div>
                     </div>
@@ -233,7 +280,7 @@
                             Set Different Roles
                         </div>
                         <div class="panel-body">
-                            <form action="/Account/Roles" method="post">
+                            <form action="/Order/Role" method="post">
                                 <div class="form-group">
                                     <label for="name"> Role Title :</label>
                                     <input type="text" class="form-control" id="name" name="Name">
@@ -250,53 +297,6 @@
 
                 </div>
             </div>
-        </div>
-        <div class="col-lg-3">
-            <div class="panel panel-warning">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" href="#collapse7">User Form </a>
-                    </h4>
-                </div>
-                <div id="collapse7" class="panel-collapse collapse">
-
-
-
-                    <div class="panel  panel-success ">
-                        <div class="panel-heading">
-                            Set User Details
-                        </div>
-                        <div class="panel-body">
-                            <form action="/Account/User" method="post">
-                                <div class="form-group">
-                                    <label for="name"> User Name :</label>
-                                    <input type="text" class="form-control" id="name" name="Name">
-                                </div>
-                                <div class="form-group">
-                                    <label for="email"> User Email :</label>
-                                    <input type="text" class="form-control" id="email" name="Email">
-                                </div>
-                                <div class="form-group">
-                                    <label for="pwd"> User Password :</label>
-                                    <input type="password" class="form-control" id="pwd" name="Password">
-                                </div>
-                                <div class="form-group">
-                                    <label for="role"> User Role Id :</label>
-                                    <input type="text" class="form-control" id="role" name="RoleId">
-                                </div>
-
-                                <button type="submit" class="btn btn-danger">Add Now</button>
-                            </form>
-                        </div>
-                    </div>
-
-
-
-
-
-                </div>
-            </div>
-
         </div>
     </div>
 </div>
