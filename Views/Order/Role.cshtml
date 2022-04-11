@@ -1,7 +1,26 @@
-﻿
-@{
-    ViewBag.Title = "Role";
-}
+﻿@using ShoppingApp.Models
+@model List<Role>
 
-<h2>Role</h2>
 
+<h2>Roles List </h2>
+
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>Role Id</th>
+            <th>Role Name</th>
+        </tr>
+    </thead>
+    @foreach (var i in Model)
+    {
+        <tbody>
+            <tr>
+                <td>@i.Id</td>
+            </tr>
+            <tr>
+                <td>@i.Name</td>
+            </tr>
+
+        </tbody>
+    }
+</table>

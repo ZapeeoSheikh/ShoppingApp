@@ -1,7 +1,27 @@
-﻿
-@{
-    ViewBag.Title = "OrderStatus";
-}
+﻿@using ShoppingApp.Models
+@model List<OrderStatus>
 
-<h2>OrderStatus</h2>
 
+<h2>Order Status List </h2>
+
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>Order Id</th>
+            <th>Order Name</th>
+
+        </tr>
+    </thead>
+    @foreach (var i in Model)
+    {
+        <tbody>
+            <tr>
+                <td>@i.Id</td>
+            </tr>
+            <tr>
+                <td>@i.Name</td>
+            </tr>
+
+        </tbody>
+    }
+</table>
