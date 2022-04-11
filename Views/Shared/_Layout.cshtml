@@ -7,31 +7,44 @@
     <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <script src="~/Scripts/modernizr-2.8.3.js"></script>
+    <style>
+        .navbar-btn a {
+            color: aliceblue;
+        }
+
+        body {
+            padding: 0px;
+            margin: 0px;
+        }
+    </style>
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                <a class="navbar-brand" href="#">Muhammad Rameez</a>
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                </ul>
-            </div>
-        </div>
-    </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="/Account/Index">Index</a></li>
+                <li><a href="/Order/User">User</a></li>
+                <li><a href="/Order/Role">Role</a></li>
+                <li><a href="/Account/ProductImage">ProductImages</a></li>
+            </ul>
+            <button class="btn btn-warning navbar-btn"><a href="/Order/Order">Order</a></button>
+            <button class="btn btn-success navbar-btn"><a href="/Order/OrderStatus">OrderStatus</a></button>
+            <button class="btn btn-danger navbar-btn"><a href="/Account/Product">Products</a></button>
+            <button class="btn btn-warning navbar-btn"><a href="/Account/ProductStatus">ProductStatus</a></button>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
 
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
+            </ul>
+        </div>
+    </nav>
+    <div style="margin: 5px 0px 10px 0px">
+        <div class="container-fluid">
+            @RenderBody()
+        </div>
     </div>
 
     <script src="~/Scripts/jquery-3.4.1.min.js"></script>

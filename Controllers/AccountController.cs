@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace ShoppingApp.Controllers
 {
-    public class ProductController : Controller
+    public class AccountController : Controller
     {
         // GET: Product
         public ActionResult Index()
