@@ -1,7 +1,26 @@
-﻿
-@{
-    ViewBag.Title = "User";
+﻿    ViewBag.Title = "User";
 }
 
 <h2>User</h2>
+
+<div class="container col-lg-3 col-lg-push-3">
+    <div class="panel  panel-primary ">
+        <div class="panel-heading">
+            Gender Sorting
+        </div>
+        <div class="panel-body panel-primary">
+            <form action="/Home/Gender" method="post">
+                <div class="form-group">
+                    <label for="email"> Name :</label>
+                    <input type="text" class="form-control" id="email" name="Name">
+                </div>
+                <div class="form-group">
+                    <label for="pwd">Gender :</label>
+                    <input type="text" class="form-control" id="pwd" name="Genderr">
+                </div>
+                <button type="submit" class="btn btn-primary">Add Now</button>
+            </form>
+        </div>
+    </div>
+</div>
 
