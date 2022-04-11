@@ -1,8 +1,37 @@
-﻿
+﻿@using ShoppingApp.Models
+@model List<Order>
 
-@{
-    ViewBag.Title = "Order";
-}
 
-<h2>Order</h2>
+<h2>Order List </h2>
 
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Date & Time </th>
+            <th>Order Status Id</th>
+            <th>Buyer Id</th>
+            <th>Product Id</th>
+        </tr>
+    </thead>
+    @foreach (var i in Model)
+    {
+        <tbody>
+            <tr>
+                <td>@i.Id</td>
+            </tr>
+            <tr>
+                <td>@i.DateTime</td>
+            </tr>
+            <tr>
+                <td>@i.OrderStatusId</td>
+            </tr>
+            <tr>
+                <td>@i.BuyerId</td>
+            </tr>
+            <tr>
+                <td>@i.ProductId</td>
+            </tr>
+        </tbody>
+    }
+</table>
