@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using ShoppingApp.Models;
 
 namespace ShoppingApp.Controllers
 {
     public class AccountController : Controller
     {
+        ShoppingContext db = new ShoppingContext();
         // GET: Product
         public ActionResult Index()
         {
@@ -15,7 +17,8 @@ namespace ShoppingApp.Controllers
         }
         public ActionResult Product()
         {
-            return View();
+            List<Product> products = db.Products.ToList();
+            return View(products);
         }
         public ActionResult PView()
         {
@@ -23,7 +26,8 @@ namespace ShoppingApp.Controllers
         }
         public ActionResult ProductStatus()
         {
-            return View();
+            List<ProductStatus> productStatus = db.ProductStatus.ToList();
+            return View(productStatus);
         }
         public ActionResult PSView()
         {
@@ -31,7 +35,8 @@ namespace ShoppingApp.Controllers
         }
         public ActionResult ProductImage()
         {
-            return View();
+            List<ProductImage> productimage = db.ProductImages.ToList();
+            return View(productimage);
         }
         public ActionResult PIView()
         {
