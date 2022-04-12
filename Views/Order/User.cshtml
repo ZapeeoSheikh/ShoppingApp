@@ -11,6 +11,7 @@
             <th>Name</th>
             <th>Role Id</th>
             <th>Email</th>
+            <th>Actions</th>
         </tr>
     </thead>
     @foreach (var i in Model)
@@ -24,6 +25,11 @@
                 <td>@i.RoleId</td>
 
                 <td>@i.Email</td>
+                <td>
+                    <a href="/Order/UView"><span class="glyphicon glyphicon-eye-open"></span> </a> |
+                    <a href="/Order/UEdit"><span class="glyphicon glyphicon-pencil"></span> </a> |
+                    <a href="/Order/UDelete"><span class="glyphicon glyphicon-trash"></span> </a>
+                </td>
             </tr>
         </tbody>
     }
