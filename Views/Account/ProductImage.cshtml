@@ -10,6 +10,7 @@
             <th>Product Image Id</th>
             <th>Product Id</th>
             <th>Product Image</th>
+            <th>Actions</th>
         </tr>
     </thead>
     @foreach (var i in Model)
@@ -21,6 +22,11 @@
                 <td>@i.ProductId</td>
 
                 <td>@i.Image</td>
+                <td>
+                    <a href="/Account/PIView"><span class="glyphicon glyphicon-eye-open"></span> </a> |
+                    <a href="/Account/PIEdit"><span class="glyphicon glyphicon-pencil"></span> </a> |
+                    <a href="/Account/PIDelete"><span class="glyphicon glyphicon-trash"></span> </a>
+                </td>
             </tr>
 
         </tbody>
