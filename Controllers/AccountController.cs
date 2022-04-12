@@ -32,6 +32,7 @@ namespace ShoppingApp.Controllers
         {
             return View();
         }
+
         [HttpGet]
         public ActionResult ProductStatus()
         {
