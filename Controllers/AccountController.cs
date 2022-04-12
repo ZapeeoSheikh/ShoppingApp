@@ -15,10 +15,18 @@ namespace ShoppingApp.Controllers
         {
             return View();
         }
+        [HttpGet]
         public ActionResult Product()
         {
             List<Product> products = db.Products.ToList();
             return View(products);
+        }
+        [HttpPost]
+        public ActionResult Product(Product products)
+        {
+            db.Products.Add(products);
+            db.SaveChanges();
+            return Redirect("/Account/Product");
         }
         public ActionResult PView()
         {
