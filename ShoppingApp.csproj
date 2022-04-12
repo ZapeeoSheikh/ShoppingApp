@@ -136,6 +136,10 @@
     <Compile Include="Migrations\202204122007018_atest.designer.cs">
       <DependentUpon>202204122007018_atest.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202204122058138_btest.cs" />
+    <Compile Include="Migrations\202204122058138_btest.designer.cs">
+      <DependentUpon>202204122058138_btest.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Order.cs" />
     <Compile Include="Models\OrderStatus.cs" />
@@ -180,6 +184,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202204122007018_atest.resx">
       <DependentUpon>202204122007018_atest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204122058138_btest.resx">
+      <DependentUpon>202204122058138_btest.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
