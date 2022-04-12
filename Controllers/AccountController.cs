@@ -32,10 +32,18 @@ namespace ShoppingApp.Controllers
         {
             return View();
         }
+        [HttpGet]
         public ActionResult ProductStatus()
         {
             List<ProductStatus> productStatus = db.ProductStatus.ToList();
             return View(productStatus);
+        }
+        [HttpPost]
+        public ActionResult ProductStatus(ProductStatus productStatus)
+        {
+            db.Products.Add(productStatus);
+            db.SaveChanges();
+            return Redirect("/Account/ProductStatus");
         }
         public ActionResult PSView()
         {
