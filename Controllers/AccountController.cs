@@ -41,7 +41,7 @@ namespace ShoppingApp.Controllers
         [HttpPost]
         public ActionResult ProductStatus(ProductStatus productStatus)
         {
-            db.Products.Add(productStatus);
+            db.ProductStatus.Add(productStatus);
             db.SaveChanges();
             return Redirect("/Account/ProductStatus");
         }
@@ -49,10 +49,18 @@ namespace ShoppingApp.Controllers
         {
             return View();
         }
+        [HttpGet]
         public ActionResult ProductImage()
         {
             List<ProductImage> productimage = db.ProductImages.ToList();
             return View(productimage);
+        }
+        [HttpPost]
+        public ActionResult ProductImage(ProductImage productsImage)
+        {
+            db.ProductImages.Add(productsImage);
+            db.SaveChanges();
+            return Redirect("/Account/ProductImage");
         }
         public ActionResult PIView()
         {
