@@ -26,8 +26,15 @@ namespace ShoppingApp.Controllers
         }
         public ActionResult OView(int Id)
         {
+            Orders orders = db.Orders.FirstOrDefault(o => o.Id == Id);
+            return View(orders);
+        }
+        public ActionResult ODelete(int Id)
+        {
+            Orders orders = db.Orders.FirstOrDefault(o => o.Id == Id);
+            db.Orders.Remove(orders);
             db.SaveChanges();
-            return Redirect("/Order/OView");
+            return View(orders);
         }
         [HttpGet]
         public ActionResult OrderStatus()
