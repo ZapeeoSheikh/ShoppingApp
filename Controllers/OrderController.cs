@@ -34,7 +34,7 @@ namespace ShoppingApp.Controllers
             Orders orders = db.Orders.FirstOrDefault(o => o.Id == Id);
             db.Orders.Remove(orders);
             db.SaveChanges();
-            return View(orders);
+            return Redirect("/Order/Orders");
         }
         [HttpGet]
         public ActionResult OrderStatus()
@@ -74,6 +74,18 @@ namespace ShoppingApp.Controllers
             db.SaveChanges();
             return Redirect("/Order/Role");
         }
+        public ActionResult RView(int Id)
+        {
+            Role role = db.Roles.FirstOrDefault(o => o.Id == Id);
+            return View(role);
+        }
+        public ActionResult RDelete(int Id)
+        {
+            Role role = db.Roles.FirstOrDefault(o => o.Id == Id);
+            db.Roles.Remove(role);
+            db.SaveChanges();
+            return Redirect("/Order/Role");
+        }
         [HttpGet]
         public ActionResult User()
         {
@@ -87,5 +99,6 @@ namespace ShoppingApp.Controllers
             db.SaveChanges();
             return Redirect("/Order/User");
         }
+
     }
 }

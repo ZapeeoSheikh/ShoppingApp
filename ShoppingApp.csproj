@@ -166,9 +166,8 @@
     <Content Include="Views\Order\Role.cshtml" />
     <Content Include="Views\Order\User.cshtml" />
     <Content Include="Views\Order\OView.cshtml" />
-    <Content Include="Views\Order\ODelete.cshtml" />
-    <Content Include="Views\Order\OSDelete.cshtml" />
     <Content Include="Views\Order\OSView.cshtml" />
+    <Content Include="Views\Order\RView.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
