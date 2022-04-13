@@ -87,7 +87,7 @@ namespace ShoppingApp.Controllers
         public ActionResult PIDelete(int Id)
         {
             ProductImage productImage = db.ProductImages.FirstOrDefault(o => o.Id == Id);
-            db.Roles.Remove(productImage);
+            db.ProductImages.Remove(productImage);
             db.SaveChanges();
             return Redirect("/Account/ProductImage");
         }
