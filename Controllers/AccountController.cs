@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Services.Description;
 using ShoppingApp.Models;
 
 namespace ShoppingApp.Controllers
@@ -28,11 +29,18 @@ namespace ShoppingApp.Controllers
             db.SaveChanges();
             return Redirect("/Account/Product");
         }
-        public ActionResult PView()
+        public ActionResult PView(int Id)
         {
-            return View();
+            Product product = db.Products.FirstOrDefault(o => o.Id == Id);
+            return View(product);
         }
-
+        public ActionResult PDelete(int Id)
+        {
+            Product product = db.Products.FirstOrDefault(o => o.Id == Id);
+            db.Products.Remove(product);
+            db.SaveChanges();
+            return Redirect("/Account/Product");
+        }
         [HttpGet]
         public ActionResult ProductStatus()
         {
@@ -46,9 +54,17 @@ namespace ShoppingApp.Controllers
             db.SaveChanges();
             return Redirect("/Account/ProductStatus");
         }
-        public ActionResult PSView()
+        public ActionResult PSView(int Id)
         {
-            return View();
+            ProductStatus productStatus = db.ProductStatus.FirstOrDefault(o => o.Id == Id);
+            return View(productStatus);
+        }
+        public ActionResult PSDelete(int Id)
+        {
+            ProductStatus productStatus = db.ProductStatus.FirstOrDefault(o => o.Id == Id);
+            db.ProductStatus.Remove(productStatus);
+            db.SaveChanges();
+            return Redirect("/Account/ProductStatus");
         }
         [HttpGet]
         public ActionResult ProductImage()
@@ -63,9 +79,17 @@ namespace ShoppingApp.Controllers
             db.SaveChanges();
             return Redirect("/Account/ProductImage");
         }
-        public ActionResult PIView()
+        public ActionResult PIView(int Id)
         {
-            return View();
+            ProductImage productImage = db.ProductImages.FirstOrDefault(o => o.Id == Id);
+            return View(productImage);
+        }
+        public ActionResult PIDelete(int Id)
+        {
+            ProductImage productImage = db.ProductImages.FirstOrDefault(o => o.Id == Id);
+            db.Roles.Remove(productImage);
+            db.SaveChanges();
+            return Redirect("/Account/ProductImage");
         }
 
 

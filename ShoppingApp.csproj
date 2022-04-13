@@ -169,6 +169,9 @@
     <Content Include="Views\Order\OSView.cshtml" />
     <Content Include="Views\Order\RView.cshtml" />
     <Content Include="Views\Order\UView.cshtml" />
+    <Content Include="Views\Account\PView.cshtml" />
+    <Content Include="Views\Account\PSView.cshtml" />
+    <Content Include="Views\Account\PIView.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
