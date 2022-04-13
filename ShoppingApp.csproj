@@ -167,6 +167,8 @@
     <Content Include="Views\Order\User.cshtml" />
     <Content Include="Views\Order\OView.cshtml" />
     <Content Include="Views\Order\ODelete.cshtml" />
+    <Content Include="Views\Order\OSDelete.cshtml" />
+    <Content Include="Views\Order\OSView.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

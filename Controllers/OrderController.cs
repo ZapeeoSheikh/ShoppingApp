@@ -49,6 +49,18 @@ namespace ShoppingApp.Controllers
             db.SaveChanges();
             return Redirect("/Order/OrderStatus");
         }
+        public ActionResult OSView(int Id)
+        {
+            OrderStatus orderStatus = db.OrderStatus.FirstOrDefault(o => o.Id == Id);
+            return View(orderStatus);
+        }
+        public ActionResult OSDelete(int Id)
+        {
+            OrderStatus orderStatus = db.OrderStatus.FirstOrDefault(o => o.Id == Id);
+            db.Orders.Remove(orderStatus);
+            db.SaveChanges();
+            return View(orderStatus);
+        }
         [HttpGet]
         public ActionResult Role()
         {
