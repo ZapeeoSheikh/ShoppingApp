@@ -99,6 +99,17 @@ namespace ShoppingApp.Controllers
             db.SaveChanges();
             return Redirect("/Order/User");
         }
-
+        public ActionResult UView(int Id)
+        {
+            User user = db.Users.FirstOrDefault(o => o.Id == Id);
+            return View(user);
+        }
+        public ActionResult UDelete(int Id)
+        {
+            User user = db.Users.FirstOrDefault(o => o.Id == Id);
+            db.Users.Remove(user);
+            db.SaveChanges();
+            return Redirect("/Order/User");
+        }
     }
 }

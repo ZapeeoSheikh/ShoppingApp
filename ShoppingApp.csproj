@@ -168,6 +168,7 @@
     <Content Include="Views\Order\OView.cshtml" />
     <Content Include="Views\Order\OSView.cshtml" />
     <Content Include="Views\Order\RView.cshtml" />
+    <Content Include="Views\Order\UView.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
