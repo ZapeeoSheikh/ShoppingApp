@@ -14,8 +14,8 @@ namespace ShoppingApp.Controllers
         [HttpGet]
         public ActionResult Order()
         {
-            List<Order> order = db.Orders.ToList();
-            return View(order);
+            List<Order> orders = db.Orders.ToList();
+            return View(orders);
         }
         [HttpPost]
         public ActionResult Order(Order order)
@@ -23,6 +23,11 @@ namespace ShoppingApp.Controllers
             db.Orders.Add(order);
             db.SaveChanges();
             return Redirect("/Order/Order");
+        }
+        public ActionResult OView(int Id)
+        {
+            db.SaveChanges();
+            return Redirect("/Order/OView");
         }
         [HttpGet]
         public ActionResult OrderStatus()
