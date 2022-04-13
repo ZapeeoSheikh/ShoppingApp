@@ -57,9 +57,9 @@ namespace ShoppingApp.Controllers
         public ActionResult OSDelete(int Id)
         {
             OrderStatus orderStatus = db.OrderStatus.FirstOrDefault(o => o.Id == Id);
-            db.Orders.Remove(orderStatus);
+            db.OrderStatus.Remove(orderStatus);
             db.SaveChanges();
-            return View(orderStatus);
+            return Redirect("/Order/OrderStatus");
         }
         [HttpGet]
         public ActionResult Role()
