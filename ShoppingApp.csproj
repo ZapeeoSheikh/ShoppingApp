@@ -141,7 +141,7 @@
       <DependentUpon>202204122058138_btest.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\Orders.cs" />
     <Compile Include="Models\OrderStatus.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\ProductImage.cs" />
@@ -161,7 +161,7 @@
     <Content Include="Views\Account\Product.cshtml" />
     <Content Include="Views\Account\ProductStatus.cshtml" />
     <Content Include="Views\Account\ProductImage.cshtml" />
-    <Content Include="Views\Order\Order.cshtml" />
+    <Content Include="Views\Order\Orders.cshtml" />
     <Content Include="Views\Order\OrderStatus.cshtml" />
     <Content Include="Views\Order\Role.cshtml" />
     <Content Include="Views\Order\User.cshtml" />

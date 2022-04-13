@@ -5,7 +5,7 @@ using System.Web;
 
 namespace ShoppingApp.Models
 {
-    public class Order
+    public class Orders
     {
         public int Id { get; set; }
         public DateTime DateTime { get; set; }

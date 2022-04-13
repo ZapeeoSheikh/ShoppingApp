@@ -12,17 +12,17 @@ namespace ShoppingApp.Controllers
         // GET: Order
         ShoppingContext db = new ShoppingContext();
         [HttpGet]
-        public ActionResult Order()
+        public ActionResult Orders()
         {
-            List<Order> orders = db.Orders.ToList();
+            List<Orders> orders = db.Orders.ToList();
             return View(orders);
         }
         [HttpPost]
-        public ActionResult Order(Order order)
+        public ActionResult Orders(Orders orders)
         {
-            db.Orders.Add(order);
+            db.Orders.Add(orders);
             db.SaveChanges();
-            return Redirect("/Order/Order");
+            return Redirect("/Order/Orders");
         }
         public ActionResult OView(int Id)
         {
