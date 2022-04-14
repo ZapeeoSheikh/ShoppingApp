@@ -1,7 +1,40 @@
-﻿
+﻿@using ShoppingApp.Models
+@model Orders
 @{
     ViewBag.Title = "OView";
 }
 
-<h2>OView</h2>
+<div class="panel panel-primary container-fluid col-lg-3 col-lg-push-3">
+    <div class="panel-heading">Order of ID @Model.Id Details</div>
+    <div class="panel-body ">
 
+        <div class="col-lg-push-1" style="padding: 0px 0px 10px 10px">
+            <img src="~/images/avatar.jpg" style="height: 250px; width: 250px " />
+            <div style="padding: 10px 0px 0px 0px ">
+                <p>
+                    Order ID : <b>
+                        @Model.Id
+                    </b>
+                </p>
+                <p>
+                    Product ID :  <b>
+                        @Model.ProductId
+                    </b>
+                </p>
+                <p>
+                    Buyer ID : <b>@Model.BuyerId</b>
+                </p>
+                <p>
+                    Order Status ID : <b>@Model.OrderStatusId</b>
+                </p>
+                <p>
+                    Date and Time : <b>@Model.DateTime</b>
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</div>
