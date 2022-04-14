@@ -1,7 +1,38 @@
-﻿
+﻿@using ShoppingApp.Models
+@model User
 @{
     ViewBag.Title = "UView";
 }
 
-<h2>UView</h2>
+<div class="panel panel-primary container-fluid col-lg-3 col-lg-push-3">
+    <div class="panel-heading">User @Model.Id Details</div>
+    <div class="panel-body ">
 
+        <div class="col-lg-push-1" style="padding: 0px 0px 10px 10px">
+            <img src="~/images/avatar.jpg" style="height: 250px; width: 250px " />
+            <div style="padding: 10px 0px 0px 0px ">
+                <p>
+                    User ID : <b>
+                        @Model.Id
+                    </b>
+                </p>
+                <p>
+                    Name :  <b>
+                        @Model.Name
+                    </b>
+                </p>
+                <p>
+                    Email : <b>@Model.Email</b>
+                </p>
+                <p>
+                    Role Id : <b>@Model.Email</b>
+                </p>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+</div>
