@@ -24,6 +24,23 @@ namespace ShoppingApp.Controllers
             db.SaveChanges();
             return Redirect("/Order/Orders");
         }
+        [HttpGet]
+        public ActionResult EOrders(int Id)
+        {
+            Orders orders = db.Orders.Where(o => o.Id == Id).FirstOrDefault();
+            db.SaveChanges();
+            return View(orders);
+        }
+        [HttpPost]
+        public ActionResult EOrders(Orders orders)
+        {
+            Orders dborders = db.Orders.Where(o => o.Id == orders.Id).FirstOrDefault();
+            dborders.BuyerId = orders.BuyerId;
+            dborders.ProductId = orders.ProductId;
+            dborders.OrderStatusId = orders.OrderStatusId;
+            dborders.DateTime = orders.DateTime;
+            return Redirect("/Order/Orders");
+        }
         public ActionResult OView(int Id)
         {
             Orders orders = db.Orders.FirstOrDefault(o => o.Id == Id);
