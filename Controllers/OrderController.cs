@@ -72,7 +72,7 @@ namespace ShoppingApp.Controllers
         {
             db.Roles.Add(role);
             db.SaveChanges();
-            return Redirect("/Order/Roles");
+            return Redirect("/Order/Role");
         }
         public ActionResult RView(int Id)
         {
