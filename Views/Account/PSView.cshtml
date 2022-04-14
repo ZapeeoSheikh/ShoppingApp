@@ -1,7 +1,31 @@
-﻿
+﻿@using ShoppingApp.Models
+@model ProductStatus
 @{
     ViewBag.Title = "PSView";
 }
 
-<h2>PSView</h2>
+<div class="panel panel-primary container-fluid col-lg-3 col-lg-push-3">
+    <div class="panel-heading">Product Status of ID @Model.Id Details</div>
+    <div class="panel-body ">
 
+        <div class="col-lg-push-1" style="padding: 0px 0px 10px 10px">
+            <img src="~/images/status_avtar-removebg-preview.png" style="height: 250px; width: 250px " />
+            <div style="padding: 10px 0px 0px 0px ">
+                <p>
+                    Product Image ID : <b>
+                        @Model.Id
+                    </b>
+                </p>
+                <p>
+                    Product Current Status :  <b>
+                        @Model.Name
+                    </b>
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</div>
