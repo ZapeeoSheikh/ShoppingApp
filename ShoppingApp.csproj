@@ -113,6 +113,7 @@
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="images\avatar.jpg" />
     <Content Include="images\cart_avatar.png" />
+    <Content Include="images\image-removebg-preview.png" />
     <Content Include="images\images-removebg-preview.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />

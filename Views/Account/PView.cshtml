@@ -1,7 +1,46 @@
-﻿
+﻿@using ShoppingApp.Models
+@model Product
 @{
     ViewBag.Title = "PView";
 }
 
-<h2>PView</h2>
+<div class="panel panel-primary container-fluid col-lg-3 col-lg-push-3">
+    <div class="panel-heading">Product of ID @Model.Id Details</div>
+    <div class="panel-body ">
 
+        <div class="col-lg-push-1" style="padding: 0px 0px 10px 10px">
+            <img src="~/images/image-removebg-preview.png" style="height: 250px; width: 250px " />
+            <div style="padding: 10px 0px 0px 0px ">
+                <p>
+                    Product ID : <b>
+                        @Model.Id
+                    </b>
+                </p>
+                <p>
+                    Product Name :  <b>
+                        @Model.Name
+                    </b>
+                </p>
+                <p>
+                    Product Image : <b>@Model.Description</b>
+                </p>
+                <p>
+                    Product Price : <b>@Model.Price</b>
+                </p>
+                <p>
+                    Product Image : <b>@Model.Image</b>
+                </p>
+                <p>
+                    Seller ID : <b>@Model.SellerId</b>
+                </p>
+                <p>
+                    Product Status ID : <b>@Model.ProductStatusId</b>
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</div>
