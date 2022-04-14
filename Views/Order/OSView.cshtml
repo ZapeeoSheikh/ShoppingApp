@@ -1,7 +1,31 @@
-﻿
+﻿@using ShoppingApp.Models
+@model OrderStatus
 @{
     ViewBag.Title = "OSView";
 }
 
-<h2>OSView</h2>
+<div class="panel panel-success container-fluid col-lg-3 col-lg-push-3">
+    <div class="panel-heading">Order Status of ID @Model.Id Details</div>
+    <div class="panel-body ">
 
+        <div class="col-lg-push-1" style="padding: 0px 0px 10px 10px">
+            <img src="~/images/cart_avatar.png" style="height: 250px; width: 250px " />
+            <div style="padding: 10px 0px 0px 0px ">
+                <p>
+                    Order Status ID : <b>
+                        @Model.Id
+                    </b>
+                </p>
+                <p>
+                    Order Status :  <b>
+                        @Model.Name
+                    </b>
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</div>
