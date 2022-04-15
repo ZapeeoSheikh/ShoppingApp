@@ -64,6 +64,13 @@ namespace ShoppingApp.Controllers
             db.SaveChanges();
             return Redirect("/Account/Product");
         }
+        public ActionResult PSDelete(int Id)
+        {
+            ProductStatus productStatus = db.ProductStatus.FirstOrDefault(o => o.Id == Id);
+            db.ProductStatus.Remove(productStatus);
+            db.SaveChanges();
+            return Redirect("/Account/ProductStatus");
+        }
         [HttpGet]
         public ActionResult ProductStatus()
         {
@@ -101,13 +108,7 @@ namespace ShoppingApp.Controllers
             ProductStatus productStatus = db.ProductStatus.FirstOrDefault(o => o.Id == Id);
             return View(productStatus);
         }
-        public ActionResult PSDelete(int Id)
-        {
-            ProductStatus productStatus = db.ProductStatus.FirstOrDefault(o => o.Id == Id);
-            db.ProductStatus.Remove(productStatus);
-            db.SaveChanges();
-            return Redirect("/Account/ProductStatus");
-        }
+
         [HttpGet]
         public ActionResult ProductImage()
         {
