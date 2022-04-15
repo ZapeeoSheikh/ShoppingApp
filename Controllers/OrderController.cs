@@ -166,17 +166,17 @@ namespace ShoppingApp.Controllers
 
         }
         [HttpPost]
-        public ActionResult UEdit(Orders orders)
+        public ActionResult UEdit(User user)
         {
-            Orders dborders = db.Orders.Where(o => o.Id == orders.Id).FirstOrDefault();
+            User dborders = db.Users.Where(o => o.Id == user.Id).FirstOrDefault();
 
-            dborders.BuyerId = orders.BuyerId;
-            dborders.ProductId = orders.ProductId;
-            dborders.OrderStatusId = orders.OrderStatusId;
-            dborders.DateTime = orders.DateTime;
+            dborders.Name = user.Name;
+            dborders.Email = user.Email;
+            dborders.Password = user.Password;
+            dborders.RoleId = user.RoleId;
             db.SaveChanges();
 
-            return Redirect("/Order/Orders");
+            return Redirect("/Order/User");
         }
         public ActionResult UView(int Id)
         {
