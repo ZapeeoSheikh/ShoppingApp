@@ -1,0 +1,23 @@
+﻿@using ShoppingApp.Models
+@model ProductImage
+
+@{
+    ViewBag.Title = "PIEdit";
+}
+
+<h2>PIEdit</h2>
+
+<div class="panel-body ">
+    <form action="/Account/ProductImage" method="post">
+        <input type="hidden" name="Id" value="@Model.Id" />
+        <div class="form-group">
+            <label for="pi">Product Id :</label>
+            <input type="number" class="form-control" id="pi" name="ProductId" value="@Model.ProductId">
+        </div>
+        <div class="form-group">
+            <label for="img">Product Image :</label>
+            <input type="file" class="form-control" id="img" name="Image" value="@Model.Image">
+        </div>
+        <button type="submit" class="btn btn-danger">Add Now</button>
+    </form>
+</div>

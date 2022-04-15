@@ -184,6 +184,7 @@
     <Content Include="Views\Order\OEdit.cshtml" />
     <Content Include="Views\Order\OSEdit.cshtml" />
     <Content Include="Views\Account\PEdit.cshtml" />
+    <Content Include="Views\Account\PIEdit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -102,6 +102,26 @@ namespace ShoppingApp.Controllers
             db.SaveChanges();
             return Redirect("/Account/ProductImage");
         }
+        [HttpGet]
+        public ActionResult PIEdit(int Id)
+        {
+            ProductImage productImage = db.ProductImages.Where(o => o.Id == Id).FirstOrDefault();
+
+            return View(productImage);
+
+        }
+        [HttpPost]
+        public ActionResult PIEdit(ProductImage productImage)
+        {
+            ProductImage dborders = db.ProductImages.Where(o => o.Id == productImage.Id).FirstOrDefault();
+
+            dborders.ProductId = productImage.ProductId;
+            dborders.Image = productImage.Image;
+
+            db.SaveChanges();
+
+            return Redirect("/Order/Orders");
+        }
         public ActionResult PIView(int Id)
         {
             ProductImage productImage = db.ProductImages.FirstOrDefault(o => o.Id == Id);
