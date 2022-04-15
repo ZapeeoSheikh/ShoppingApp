@@ -35,7 +35,7 @@ namespace ShoppingApp.Controllers
         {
             Orders dborders = db.Orders.Where(o => o.Id == orders.Id).FirstOrDefault();
 
-            if (dborders != null)
+            if (orders.Id != 0)
             {
                 dborders.BuyerId = orders.BuyerId;
                 dborders.ProductId = orders.ProductId;
