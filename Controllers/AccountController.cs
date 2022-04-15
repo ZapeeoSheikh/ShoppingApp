@@ -80,13 +80,13 @@ namespace ShoppingApp.Controllers
         [HttpGet]
         public ActionResult PSEdit(int Id)
         {
-            Orders orders = db.Orders.Where(o => o.Id == Id).FirstOrDefault();
+            ProductStatus productStatus = db.ProductStatus.Where(o => o.Id == Id).FirstOrDefault();
 
-            return View(orders);
+            return View(productStatus);
 
         }
         [HttpPost]
-        public ActionResult OEdit(ProductStatus productStatus)
+        public ActionResult PSEdit(ProductStatus productStatus)
         {
             ProductStatus dborders = db.ProductStatus.Where(o => o.Id == productStatus.Id).FirstOrDefault();
 
