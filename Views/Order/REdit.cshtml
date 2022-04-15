@@ -8,13 +8,13 @@
 <h2>Role Edit</h2>
 
 <div class="panel-body">
-    <form action="/Order/Role" method="post">
+    <form action="/Order/REdit" method="post">
         <input type="hidden" name="Id" value="@Model.Id" />
         <div class="form-group">
             <label for="name"> Role Title :</label>
             <input type="text" class="form-control" id="name" name="Name" value="@Model.Name">
         </div>
 
-        <button type="submit" class="btn btn-primary">Add Now</button>
+        <button type="submit" class="btn btn-primary">Edit Now</button>
     </form>
 </div>

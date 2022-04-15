@@ -8,7 +8,7 @@
 <h2>PIEdit</h2>
 
 <div class="panel-body ">
-    <form action="/Account/ProductImage" method="post">
+    <form action="/Account/PIEdit" method="post">
         <input type="hidden" name="Id" value="@Model.Id" />
         <div class="form-group">
             <label for="pi">Product Id :</label>
@@ -18,6 +18,6 @@
             <label for="img">Product Image :</label>
             <input type="file" class="form-control" id="img" name="Image" value="@Model.Image">
         </div>
-        <button type="submit" class="btn btn-danger">Add Now</button>
+        <button type="submit" class="btn btn-danger">Edit Now</button>
     </form>
 </div>
