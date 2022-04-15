@@ -1,0 +1,25 @@
+﻿@using ShoppingApp.Models
+@model OrderStatus
+
+@{
+    ViewBag.Title = "OSEdit";
+}
+
+<h2>Edit Order Status</h2>
+
+<div class="panel  panel-sccuess ">
+    <div class="panel-heading">
+        Set Order Status
+    </div>
+    <div class="panel-body panel-primary">
+        <form action="/Order/OSEdit" method="post">
+            <input type="number" name="Id" value="@Model.Id" />
+            <div class="form-group">
+                <label for="cnic">Order Status Title :</label>
+                <input type="text" class="form-control" id="cnic" name="Name" value="@Model.Name">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Add Now</button>
+        </form>
+    </div>
+</div>

@@ -182,6 +182,7 @@
     <Content Include="Views\Account\PSView.cshtml" />
     <Content Include="Views\Account\PIView.cshtml" />
     <Content Include="Views\Order\OEdit.cshtml" />
+    <Content Include="Views\Order\OSEdit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

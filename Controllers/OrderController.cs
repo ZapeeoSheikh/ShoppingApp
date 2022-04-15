@@ -28,14 +28,9 @@ namespace ShoppingApp.Controllers
         public ActionResult OEdit(int Id)
         {
             Orders orders = db.Orders.Where(o => o.Id == Id).FirstOrDefault();
-            if (Id != 0)
-            {
-                return View(orders);
-            }
-            else
-            {
-                return View();
-            }
+
+            return View(orders);
+
         }
         [HttpPost]
         public ActionResult OEdit(Orders orders)
@@ -73,6 +68,24 @@ namespace ShoppingApp.Controllers
         {
             db.OrderStatus.Add(orderStatus);
             db.SaveChanges();
+            return Redirect("/Order/OrderStatus");
+        }
+        [HttpGet]
+        public ActionResult OSEdit(int Id)
+        {
+            OrderStatus orderStatus = db.OrderStatus.Where(o => o.Id == Id).FirstOrDefault();
+
+            return View(orderStatus);
+
+        }
+        [HttpPost]
+        public ActionResult OSEdit(OrderStatus orderStatus)
+        {
+            OrderStatus dborders = db.OrderStatus.Where(o => o.Id == orderStatus.Id).FirstOrDefault();
+
+            dborders.Name = orderStatus.Name;
+
+
             return Redirect("/Order/OrderStatus");
         }
         public ActionResult OSView(int Id)
