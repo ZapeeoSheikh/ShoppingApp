@@ -28,21 +28,26 @@ namespace ShoppingApp.Controllers
         public ActionResult OEdit(int Id)
         {
             Orders orders = db.Orders.Where(o => o.Id == Id).FirstOrDefault();
-            return View(orders);
+            if (Id != 0)
+            {
+                return View(orders);
+            }
+            else
+            {
+                return View();
+            }
         }
         [HttpPost]
         public ActionResult OEdit(Orders orders)
         {
             Orders dborders = db.Orders.Where(o => o.Id == orders.Id).FirstOrDefault();
 
-            if (orders.Id != 0)
-            {
-                dborders.BuyerId = orders.BuyerId;
-                dborders.ProductId = orders.ProductId;
-                dborders.OrderStatusId = orders.OrderStatusId;
-                dborders.DateTime = orders.DateTime;
-                db.SaveChanges();
-            }
+            dborders.BuyerId = orders.BuyerId;
+            dborders.ProductId = orders.ProductId;
+            dborders.OrderStatusId = orders.OrderStatusId;
+            dborders.DateTime = orders.DateTime;
+            db.SaveChanges();
+
             return Redirect("/Order/Orders");
         }
         public ActionResult OView(int Id)

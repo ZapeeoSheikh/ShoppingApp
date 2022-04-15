@@ -15,6 +15,7 @@
         </div>
         <div class="panel-body ">
             <form action="/Order/OEdit" method="post">
+                <input type="hidden" name="Id" value="@Model.Id" />
                 <div class="form-group">
                     <label for="date"> Date and Time :</label>
                     <input type="datetime-local" class="form-control" id="date" name="DateTime" value="@Model.DateTime">
