@@ -8,48 +8,32 @@
 <h2>Edit Orders</h2>
 
 
-<div class="col-lg-3">
-    <div class="panel panel-success">
-        <div class="panel-heading">
-            <h4 class="panel-title">
-                <a data-toggle="collapse" href="#collapse4">Orders Form</a>
-            </h4>
-        </div>
-        <div id="collapse4" class="panel-collapse collapse">
 
-
-
-            <div class="panel  panel-warning ">
-                <div class="panel-heading">
-                    Set Order Details
-                </div>
-                <div class="panel-body ">
-                    <form action="/Order/OEdit" method="post">
-                        <div class="form-group">
-                            <label for="date"> Date and Time :</label>
-                            <input type="datetime-local" class="form-control" id="date" name="DateTime" value="@Model.DateTime">
-                        </div>
-                        <div class="form-group">
-                            <label for="cost">Order Status Id :</label>
-                            <input type="number" class="form-control" id="cost" name="OrderStatusId" value="@Model.OrderStatusId">
-                        </div>
-                        <div class="form-group">
-                            <label for="des">Buyer Id :</label>
-                            <input type="number" class="form-control" id="des" name="BuyerId" value="@Model.BuyerId">
-                        </div>
-                        <div class="form-group">
-                            <label for="de">Product Id :</label>
-                            <input type="number" class="form-control" id="de" name="ProductId" value="@Model.ProductId">
-                        </div>
-                        <button type="submit" class="btn btn-warning">Add Now</button>
-                    </form>
-                </div>
+<div class="panel  panel-warning ">
+    <div class="panel-heading">
+        Set Order Details
+    </div>
+    <div class="panel-body ">
+        <form action="/Order/OEdit" method="post">
+            <div class="form-group">
+                <label for="date"> Date and Time :</label>
+                <input type="datetime-local" class="form-control" id="date" name="DateTime" value="@Model.DateTime">
             </div>
-
-
-
-
-
-        </div>
+            <div class="form-group">
+                <label for="cost">Order Status Id :</label>
+                <input type="number" class="form-control" id="cost" name="OrderStatusId" value="@Model.OrderStatusId">
+            </div>
+            <div class="form-group">
+                <label for="des">Buyer Id :</label>
+                <input type="number" class="form-control" id="des" name="BuyerId" value="@Model.BuyerId">
+            </div>
+            <div class="form-group">
+                <label for="de">Product Id :</label>
+                <input type="number" class="form-control" id="de" name="ProductId" value="@Model.ProductId">
+            </div>
+            <button type="submit" class="btn btn-warning">Add Now</button>
+        </form>
     </div>
 </div>
+
+
