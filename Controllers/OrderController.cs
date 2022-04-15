@@ -84,7 +84,7 @@ namespace ShoppingApp.Controllers
             OrderStatus dborders = db.OrderStatus.Where(o => o.Id == orderStatus.Id).FirstOrDefault();
 
             dborders.Name = orderStatus.Name;
-
+            db.SaveChanges();
 
             return Redirect("/Order/OrderStatus");
         }
