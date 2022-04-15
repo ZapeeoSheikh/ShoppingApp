@@ -113,6 +113,25 @@ namespace ShoppingApp.Controllers
             db.SaveChanges();
             return Redirect("/Order/Role");
         }
+        [HttpGet]
+        public ActionResult REdit(int Id)
+        {
+            Role role = db.Roles.Where(o => o.Id == Id).FirstOrDefault();
+
+            return View(role);
+
+        }
+        [HttpPost]
+        public ActionResult REdit(Role role)
+        {
+            Role dborders = db.Roles.Where(o => o.Id == role.Id).FirstOrDefault();
+
+            dborders.Name = role.Name;
+
+            db.SaveChanges();
+
+            return Redirect("/Order/Role");
+        }
         public ActionResult RView(int Id)
         {
             Role role = db.Roles.FirstOrDefault(o => o.Id == Id);
