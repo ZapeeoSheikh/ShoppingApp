@@ -57,6 +57,13 @@ namespace ShoppingApp.Controllers
             db.SaveChanges();
             return Redirect("/Order/Orders");
         }
+        public ActionResult OSDelete(int Id)
+        {
+            OrderStatus orderStatus = db.OrderStatus.FirstOrDefault(o => o.Id == Id);
+            db.OrderStatus.Remove(orderStatus);
+            db.SaveChanges();
+            return Redirect("/Order/OrderStatus");
+        }
         [HttpGet]
         public ActionResult OrderStatus()
         {
@@ -92,13 +99,6 @@ namespace ShoppingApp.Controllers
         {
             OrderStatus orderStatus = db.OrderStatus.FirstOrDefault(o => o.Id == Id);
             return View(orderStatus);
-        }
-        public ActionResult OSDelete(int Id)
-        {
-            OrderStatus orderStatus = db.OrderStatus.FirstOrDefault(o => o.Id == Id);
-            db.OrderStatus.Remove(orderStatus);
-            db.SaveChanges();
-            return Redirect("/Order/OrderStatus");
         }
         [HttpGet]
         public ActionResult Role()
