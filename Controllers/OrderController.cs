@@ -157,6 +157,27 @@ namespace ShoppingApp.Controllers
             db.SaveChanges();
             return Redirect("/Order/User");
         }
+        [HttpGet]
+        public ActionResult UEdit(int Id)
+        {
+            User user = db.Users.Where(o => o.Id == Id).FirstOrDefault();
+
+            return View(user);
+
+        }
+        [HttpPost]
+        public ActionResult UEdit(Orders orders)
+        {
+            Orders dborders = db.Orders.Where(o => o.Id == orders.Id).FirstOrDefault();
+
+            dborders.BuyerId = orders.BuyerId;
+            dborders.ProductId = orders.ProductId;
+            dborders.OrderStatusId = orders.OrderStatusId;
+            dborders.DateTime = orders.DateTime;
+            db.SaveChanges();
+
+            return Redirect("/Order/Orders");
+        }
         public ActionResult UView(int Id)
         {
             User user = db.Users.FirstOrDefault(o => o.Id == Id);

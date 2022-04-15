@@ -1,0 +1,34 @@
+﻿@using ShoppingApp.Models
+@model User
+
+
+@{
+    ViewBag.Title = "UEdit";
+}
+
+<h2>User Edit</h2>
+
+<div class="panel-body">
+    <form action="/Order/User" method="post">
+        <input type="hidden" name="Id" value="@Model.Id" />
+
+        <div class="form-group">
+            <label for="name"> User Name :</label>
+            <input type="text" class="form-control" id="name" name="Name" @Model.Name>
+        </div>
+        <div class="form-group">
+            <label for="email"> User Email :</label>
+            <input type="text" class="form-control" id="email" name="Email" value="@Model.Email">
+        </div>
+        <div class="form-group">
+            <label for="pwd"> User Password :</label>
+            <input type="password" class="form-control" id="pwd" name="Password" value="@Model.Password">
+        </div>
+        <div class="form-group">
+            <label for="role"> User Role Id :</label>
+            <input type="number" class="form-control" id="role" name="RoleId" value="@Model.RoleId">
+        </div>
+
+        <button type="submit" class="btn btn-danger">Add Now</button>
+    </form>
+</div>
