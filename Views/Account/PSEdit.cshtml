@@ -1,0 +1,20 @@
+﻿@using ShoppingApp.Models
+@model ProductStatus
+
+@{
+    ViewBag.Title = "PSEdit";
+}
+
+<h2>Product Status Edit</h2>
+
+<div class="panel-body">
+    <form action="/Account/ProductStatus" method="post">
+        <input type="hidden" name="Id" value="@Model.Id" />
+        <div class="form-group">
+            <label for="name"> Product Name :</label>
+            <input type="text" class="form-control" id="name" name="Name" value="@Model.Name">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Add Now</button>
+    </form>
+</div>

@@ -50,7 +50,7 @@ namespace ShoppingApp.Controllers
             dborders.ProductStatusId = product.ProductStatusId;
             db.SaveChanges();
 
-            return Redirect("/Order/Orders");
+            return Redirect("/Account/Product");
         }
         public ActionResult PView(int Id)
         {
@@ -75,6 +75,25 @@ namespace ShoppingApp.Controllers
         {
             db.ProductStatus.Add(productStatus);
             db.SaveChanges();
+            return Redirect("/Account/ProductStatus");
+        }
+        [HttpGet]
+        public ActionResult PSEdit(int Id)
+        {
+            Orders orders = db.Orders.Where(o => o.Id == Id).FirstOrDefault();
+
+            return View(orders);
+
+        }
+        [HttpPost]
+        public ActionResult OEdit(ProductStatus productStatus)
+        {
+            ProductStatus dborders = db.ProductStatus.Where(o => o.Id == productStatus.Id).FirstOrDefault();
+
+            dborders.Id = productStatus.Id;
+            dborders.Name = productStatus.Name;
+            db.SaveChanges();
+
             return Redirect("/Account/ProductStatus");
         }
         public ActionResult PSView(int Id)
@@ -120,7 +139,7 @@ namespace ShoppingApp.Controllers
 
             db.SaveChanges();
 
-            return Redirect("/Order/Orders");
+            return Redirect("/Account/ProductImage");
         }
         public ActionResult PIView(int Id)
         {
