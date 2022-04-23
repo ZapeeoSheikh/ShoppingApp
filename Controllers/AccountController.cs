@@ -19,7 +19,9 @@ namespace ShoppingApp.Controllers
         [HttpGet]
         public ActionResult Product()
         {
-            //ViewBag.Product
+            ViewBag.ProductStatuses = db.ProductStatus.ToList();
+            ViewBag.Sellers = db.Users.Where(x => x.RoleId == 2).ToList();
+            // 
             List<Product> products = db.Products.ToList();
             return View(products);
         }

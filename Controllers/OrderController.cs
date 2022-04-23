@@ -148,6 +148,7 @@ namespace ShoppingApp.Controllers
         public ActionResult User()
         {
 
+            ViewBag.Sellers = db.Users.Where(x => x.RoleId == 2).ToList();
             List<User> users = db.Users.ToList();
             return View(users);
         }
