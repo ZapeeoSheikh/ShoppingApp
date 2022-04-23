@@ -116,7 +116,16 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="role"> User Role Id :</label>
-                                    <input type="number" class="form-control" id="role" name="RoleId">
+                                    <select name="RoleId" class="form-control" id="role">
+                                        <option value="0">- Select Role Id -</option>
+                                        @foreach (var item in Model)
+                                        {
+                                            <option value="@item.Id"> @item.Name</option>
+
+                                        }
+
+                                    </select>
+
                                 </div>
 
                                 <button type="submit" class="btn btn-danger">Add Now</button>

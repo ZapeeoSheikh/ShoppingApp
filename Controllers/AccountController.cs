@@ -19,6 +19,7 @@ namespace ShoppingApp.Controllers
         [HttpGet]
         public ActionResult Product()
         {
+            //ViewBag.Product
             List<Product> products = db.Products.ToList();
             return View(products);
         }
