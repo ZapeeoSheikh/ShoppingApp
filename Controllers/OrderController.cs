@@ -147,6 +147,7 @@ namespace ShoppingApp.Controllers
         [HttpGet]
         public ActionResult User()
         {
+
             List<User> users = db.Users.ToList();
             return View(users);
         }

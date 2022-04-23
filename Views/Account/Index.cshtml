@@ -1,6 +1,7 @@
-﻿
+﻿@using ShoppingApp.Models
 @{
     ViewBag.Title = "Index";
+    List<User> users = ViewBag.
 }
 
 
@@ -120,12 +121,11 @@
                                         <option value="0">- Select Role Id -</option>
                                         @foreach (var item in Model)
                                         {
-                                            <option value="@item.Id"> @item.Name</option>
+                                            <option value="@item.RoleId"> @item.RoleId.Name</option>
 
                                         }
 
                                     </select>
-
                                 </div>
 
                                 <button type="submit" class="btn btn-danger">Add Now</button>
