@@ -122,7 +122,7 @@ namespace ShoppingApp.Controllers
         public ActionResult ProductImage(ProductImage productsImage, HttpPostedFileBase file)
         {
             string filename = DateTime.UtcNow.Ticks + ".jpg";
-            file.SaveAs(Server.MapPath("~/db Images/") + filename);
+            file.SaveAs(Server.MapPath("~/dbImage/") + filename);
             db.ProductImages.Add(productsImage);
             db.SaveChanges();
             return Redirect("/Account/ProductImage");
