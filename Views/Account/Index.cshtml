@@ -120,9 +120,9 @@
                                     <label for="role"> User Role Id :</label>
                                     <select name="RoleId" class="form-control" id="role">
                                         <option value="0">- Select Role Id -</option>
-                                        @foreach (var item in Sellers)
-                                        {
-                                            <option value="@item.Id"> @item.Name</option>
+                                        @*@foreach (var item in Sellers)
+                                            {
+                                                <option value="@item.Id"> @item.Name</option>*@
 
                                         }
 
@@ -158,22 +158,23 @@
                             Set Product Details
                         </div>
                         <div class="panel-body">
-                            <form action="/Account/Product" method="post">
+                            <form action="/Account/Product" method="post" enctype="multipart/form-data">
                                 <div class="form-group">
                                     <label for="email">Product Name :</label>
                                     <input type="text" class="form-control" id="email" name="Name">
                                 </div>
                                 <div class="form-group">
                                     <label for="ps">Product Status Id:</label>
-                                    <select name="ProductStatusId" class="form-control" id="ps">
-                                        <option value="0">- Select Product Status Id -</option>
-                                        @foreach (var item in productStatuses)
+                                    <input type="number" class="form-control" id="ps" name="ProductStatusId">
+                                    @*   <select name="ProductStatusId" class="form-control" id="ps">
+                                        <option value="0">- Select Product Status Id -</option>*@
+                                    @*@foreach (var item in productStatuses)
                                         {
-                                            <option value="@item.Id"> @item.Name</option>
+                                            <option value="@item.Id"> @item.Name</option>*@
 
-                                        }
+                                    @* }
 
-                                    </select>
+                                        </select>*@
                                 </div>
                                 <div class="form-group">
                                     <label for="desc">Product Description :</label>
@@ -185,19 +186,20 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="pwd">Product Image :</label>
-                                    <input type="file" class="form-control" id="pwd" name="Image">
+                                    <input type="file" class="form-control" id="pwd" name="file">
                                 </div>
                                 <div class="form-group">
                                     <label for="si">Seller Id :</label>
-                                    <select name="RoleId" class="form-control" id="role">
-                                        <option value="0">- Select Role Id -</option>
-                                        @foreach (var item in Sellers)
+                                    <input type="number" class="form-control" id="ps" name="ProductStatusId">
+                                    @* <select name="RoleId" class="form-control" id="role">
+                                                                        <option value="0">- Select Role Id -</option>
+                                                                        @foreach (var item in Sellers)
                                         {
                                             <option value="@item.RoleId"> @item.Name</option>
 
-                                        }
+                                                                    }
 
-                                    </select>
+                                                                </select>*@
                                 </div>
                                 <button type="submit" class="btn btn-success">Add Now</button>
                             </form>
@@ -227,14 +229,14 @@
                             Set Product Images
                         </div>
                         <div class="panel-body ">
-                            <form action="/Account/ProductImage" method="post">
+                            <form action="/Account/ProductImage" method="post" enctype="multipart/form-data">
                                 <div class="form-group">
                                     <label for="pi">Product Id :</label>
                                     <input type="number" class="form-control" id="pi" name="ProductId">
                                 </div>
                                 <div class="form-group">
                                     <label for="img">Product Image :</label>
-                                    <input type="file" class="form-control" id="img" name="Image">
+                                    <input type="file" class="form-control" id="img" name="file">
                                 </div>
                                 <button type="submit" class="btn btn-danger">Add Now</button>
                             </form>
