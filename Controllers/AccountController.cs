@@ -26,8 +26,11 @@ namespace ShoppingApp.Controllers
             return View(products);
         }
         [HttpPost]
-        public ActionResult Product(Product products)
+        public ActionResult Product(Product products, HttpPostedFileBase file)
         {
+            string filename = DateTime.UtcNow.Ticks + ".jpg";
+            file.SaveAs("~/dbImage/" + filename);
+            products.Image = filename;
             db.Products.Add(products);
             db.SaveChanges();
             return Redirect("/Account/Product");
@@ -123,6 +126,7 @@ namespace ShoppingApp.Controllers
         {
             string filename = DateTime.UtcNow.Ticks + ".jpg";
             file.SaveAs(Server.MapPath("~/dbImage/") + filename);
+            productsImage.Image = filename;
             db.ProductImages.Add(productsImage);
             db.SaveChanges();
             return Redirect("/Account/ProductImage");
