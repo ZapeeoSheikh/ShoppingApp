@@ -5,45 +5,60 @@
     ViewBag.Title = "Product";
 }
 
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h2 class="panel-title">Product List </h2>
+    </div>
 
-<h2>Product List </h2>
-
-<table class="table table-striped table-bordered">
-    <thead>
-        <tr>
-            <th>Product Id</th>
-            <th>Product Name</th>
-            <th>Description</th>
-            <th>Price</th>
-            <th>Product Image</th>
-            <th>Seller Id</th>
-            <th>Product Status Id</th>
-            <th>Actions</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var i in Model)
-        {
+    <table class="table table-striped table-bordered panel-body">
+        <thead>
             <tr>
-                <td>@i.Id</td>
-
-                <td>@i.Name</td>
-
-                <td>@i.Description</td>
-
-                <td>@i.Price</td>
-
-                <td><img src="~/dbImage/@i.Image" alt="Image" height="40" width="auto" /></td>
-
-                <td>@i.SellerId</td>
-
-                <td>@i.ProductStatusId</td>
-                <td>
-                    <a href="/Account/PView/@i.Id"><span class="glyphicon glyphicon-eye-open"></span> </a> |
-                    <a href="/Account/PEdit/@i.Id"><span class="glyphicon glyphicon-pencil"></span> </a>   |
-                    <a href="/Account/PDelete/@i.Id"><span class="glyphicon glyphicon-trash"></span> </a>
-                </td>
+                <th>Product Id</th>
+                <th>Product Name</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Product Image</th>
+                <th>Seller Id</th>
+                <th>Product Status Id</th>
+                <th>Actions</th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (var i in Model)
+            {
+                <tr>
+                    <td>@i.Id</td>
+
+                    <td>@i.Name</td>
+
+                    <td>@i.Description</td>
+
+                    <td>@i.Price</td>
+                    @*here i have added a link as well because when use click the image then it must be viewed*@
+                    <td><a href="/Account/PView/@i.Id"><img src="~/dbImage/@i.Image" alt="Image" height="40" width="auto" /></a></td>
+
+                    <td>@i.SellerId</td>
+
+                    <td>@i.ProductStatusId</td>
+                    <td>
+                        <a href="/Account/PView/@i.Id"><span class="glyphicon glyphicon-eye-open"></span> </a> |
+                        <a href="/Account/PEdit/@i.Id"><span class="glyphicon glyphicon-pencil"></span> </a> |
+                        <a href="/Account/PDelete/@i.Id"><span class="glyphicon glyphicon-trash"></span> </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>Product Id</th>
+                <th>Product Name</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Product Image</th>
+                <th>Seller Id</th>
+                <th>Product Status Id</th>
+                <th>Actions</th>
+            </tr>
+        </tfoot>
+    </table>
+</div>
