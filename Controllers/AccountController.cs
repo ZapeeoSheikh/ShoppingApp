@@ -29,7 +29,7 @@ namespace ShoppingApp.Controllers
         public ActionResult Product(Product products, HttpPostedFileBase file)
         {
             string filename = DateTime.UtcNow.Ticks + ".jpg";
-            file.SaveAs("~/dbImage/" + filename);
+            file.SaveAs(Server.MapPath("~/dbImage/") + filename);
             products.Image = filename;
             db.Products.Add(products);
             db.SaveChanges();
