@@ -11,6 +11,11 @@ namespace ShoppingApp.Controllers
     {
         // GET: Order
         ShoppingContext db = new ShoppingContext();
+
+        public ActionResult Index()
+        {
+            return View();
+        }
         [HttpGet]
         public ActionResult Orders()
         {
