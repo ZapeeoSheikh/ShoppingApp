@@ -3,6 +3,8 @@
     ViewBag.Title = "Index";
     List<ProductStatus> productStatuses = ViewBag.ProductStatuses as List<ProductStatus>;
     List<User> sellers = ViewBag.Sellers as List<User>;
+    List<User> buyers = ViewBag.Buyers as List<User>;
+    List<OrderStatus> orderStatus = ViewBag.OrderStatus as List<OrderStatus>;
     List<Product> products = ViewBag.Products as List<Product>;
 }
 
@@ -263,13 +265,21 @@
                         </div>
                         <div class="form-group">
                             <label for="cost">Order Status Id :</label>
-                            <input type="number" class="form-control" id="cost" name="OrderStatusId">
+                            <select name="OrderStatusId" class="form-control">
+                                <option value="0">- Select OrderStatus -</option>
+                                @foreach (var item in orderStatus)
+                                {
+                                    <option value="@item.Id"> @item.Name</option>
+
+                                }
+
+                            </select>
                         </div>
                         <div class="form-group">
                             <label for="des">Buyer Id :</label>
-                            <select name="ProductId" class="form-control">
-                                <option value="0">- Select Product Id -</option>
-                                @foreach (var item in products)
+                            <select name="BuyerId" class="form-control">
+                                <option value="0">- Select Buyer Id -</option>
+                                @foreach (var item in buyers)
                                 {
                                     <option value="@item.Id"> @item.Name</option>
 
