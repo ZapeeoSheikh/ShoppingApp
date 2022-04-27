@@ -2,7 +2,7 @@
 @{
     ViewBag.Title = "Index";
     List<ProductStatus> productStatuses = ViewBag.ProductStatuses as List<ProductStatus>;
-    List<User> Sellers = ViewBag.Sellers as List<User>;
+    List<User> sellers = ViewBag.Sellers as List<User>;
 }
 
 
@@ -111,14 +111,14 @@
                             <input type="password" class="form-control" id="pwd" name="Password">
                         </div>
                         <div class="form-group">
-                            <label for="role"> User Role Id :</label>
-                            <select name="RoleId" class="form-control" id="role">
-                                <option value="0">- Select Role Id -</option>
-                                @*@foreach (var item in Sellers)
+                            <label> User Role :</label>
+                            <select name="SellerId" class="form-control">
+                                <option value="0">- Select Role -</option>
+                                @*@foreach (var item in sellers)
                                     {
-                                        <option value="@item.Id"> @item.Name</option>*@
+                                        <option value="@item.Id"> @item.Name</option>
 
-                                }
+                                    }*@
 
                             </select>
                         </div>
@@ -157,16 +157,16 @@
                         </div>
                         <div class="form-group">
                             <label for="ps">Product Status Id:</label>
-                            <input type="number" class="form-control" id="ps" name="ProductStatusId">
-                            @*   <select name="ProductStatusId" class="form-control" id="ps">
-                                <option value="0">- Select Product Status Id -</option>*@
-                            @*@foreach (var item in productStatuses)
+                            @*<input type="number" class="form-control" id="ps" name="ProductStatusId">*@
+                            <select name="ProductStatusId" class="form-control">
+                                <option value="0">- Select Product Status Id -</option>
+                                @foreach (var item in productStatuses)
                                 {
-                                    <option value="@item.Id"> @item.Name</option>*@
+                                    <option value="@item.Id"> @item.Name</option>
 
-                            @* }
+                                }
 
-                                </select>*@
+                            </select>
                         </div>
                         <div class="form-group">
                             <label for="desc">Product Description :</label>
@@ -182,16 +182,15 @@
                         </div>
                         <div class="form-group">
                             <label for="si">Seller Id :</label>
-                            <input type="number" class="form-control" id="ps" name="SellerId">
-                            @* <select name="RoleId" class="form-control" id="role">
-                                                                <option value="0">- Select Role Id -</option>
-                                                                @foreach (var item in Sellers)
+                            <select name="SellerId" class="form-control" id="role">
+                                <option value="0">- Select Role Id -</option>
+                                @foreach (var item in sellers)
                                 {
                                     <option value="@item.RoleId"> @item.Name</option>
 
-                                                            }
+                                }
 
-                                                        </select>*@
+                            </select>
                         </div>
                         <button type="submit" class="btn btn-success">Add Now</button>
                     </form>
