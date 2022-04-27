@@ -3,6 +3,7 @@
     ViewBag.Title = "Index";
     List<ProductStatus> productStatuses = ViewBag.ProductStatuses as List<ProductStatus>;
     List<User> sellers = ViewBag.Sellers as List<User>;
+    List<Product> products = ViewBag.Products as List<Product>;
 }
 
 
@@ -114,11 +115,11 @@
                             <label> User Role :</label>
                             <select name="SellerId" class="form-control">
                                 <option value="0">- Select Role -</option>
-                                @*@foreach (var item in sellers)
-                                    {
-                                        <option value="@item.Id"> @item.Name</option>
+                                @foreach (var item in sellers)
+                                {
+                                    <option value="@item.Id"> @item.Name</option>
 
-                                    }*@
+                                }
 
                             </select>
                         </div>
@@ -157,7 +158,6 @@
                         </div>
                         <div class="form-group">
                             <label for="ps">Product Status Id:</label>
-                            @*<input type="number" class="form-control" id="ps" name="ProductStatusId">*@
                             <select name="ProductStatusId" class="form-control">
                                 <option value="0">- Select Product Status Id -</option>
                                 @foreach (var item in productStatuses)
@@ -219,7 +219,15 @@
                     <form action="/Account/ProductImage" method="post" enctype="multipart/form-data">
                         <div class="form-group">
                             <label for="pi">Product Id :</label>
-                            <input type="number" class="form-control" id="pi" name="ProductId">
+                            <select name="ProductId" class="form-control">
+                                <option value="0">- Select Product Id -</option>
+                                @foreach (var item in products)
+                                {
+                                    <option value="@item.Id"> @item.Name</option>
+
+                                }
+
+                            </select>
                         </div>
                         <div class="form-group">
                             <label for="img">Product Image :</label>
@@ -259,11 +267,27 @@
                         </div>
                         <div class="form-group">
                             <label for="des">Buyer Id :</label>
-                            <input type="number" class="form-control" id="des" name="BuyerId">
+                            <select name="ProductId" class="form-control">
+                                <option value="0">- Select Product Id -</option>
+                                @foreach (var item in products)
+                                {
+                                    <option value="@item.Id"> @item.Name</option>
+
+                                }
+
+                            </select>
                         </div>
                         <div class="form-group">
                             <label for="de">Product Id :</label>
-                            <input type="number" class="form-control" id="de" name="ProductId">
+                            <select name="ProductId" class="form-control">
+                                <option value="0">- Select Product Id -</option>
+                                @foreach (var item in products)
+                                {
+                                    <option value="@item.Id"> @item.Name</option>
+
+                                }
+
+                            </select>
                         </div>
                         <button type="submit" class="btn btn-warning">Add Now</button>
                     </form>

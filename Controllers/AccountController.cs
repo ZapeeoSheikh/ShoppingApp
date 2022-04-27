@@ -15,6 +15,7 @@ namespace ShoppingApp.Controllers
         public ActionResult Index()
         {
             ViewBag.ProductStatuses = db.ProductStatus.ToList();
+            ViewBag.Products = db.Products.ToList();
             ViewBag.Sellers = db.Users.Where(x => x.RoleId == 3).ToList();
             return View();
         }
