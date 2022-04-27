@@ -188,7 +188,6 @@
     <Content Include="Views\Account\PSEdit.cshtml" />
     <Content Include="Views\Order\REdit.cshtml" />
     <Content Include="Views\Order\UEdit.cshtml" />
-    <Content Include="Views\Order\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

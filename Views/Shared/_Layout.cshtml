@@ -76,5 +76,31 @@
         });
     </script>
     <script src="~/Scripts/bootstrap.min.js"></script>
+    <script>
+        getData();
+        debugger;
+        async function getData() {
+            const resource = await fetch("http://universities.hipolabs.com/search?country=Pakistan");
+            // ReSharper disable once PossiblyUnassignedProperty
+            const data = await resource.json();
+            let myHtml = '';
+            for (let i = 0; i < data.length; i++) {
+                myHtml += `
+                <tr>
+                    <td>${data[i].country}</td>
+                    <td>${data[i]['state-province']}</td>
+                    <td>${data[i].name}</td>
+                    <td>${data[i]['web_pages']}</td>
+                    <td>${data[i]['alpha_two_code']}</td>
+
+
+                 </tr>
+
+                `;
+                document.getElementById('myData').innerHTML = myHtml;
+
+            }
+        }
+    </script>
 </body>
 </html>
