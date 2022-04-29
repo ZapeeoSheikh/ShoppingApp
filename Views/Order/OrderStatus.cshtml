@@ -16,20 +16,21 @@
 
         </tr>
     </thead>
-    @foreach (var i in Model)
-    {
-        <tr>
-            <td>@i.Id</td>
+    <tbody>
+        @foreach (var i in Model)
+        {
+            <tr>
+                <td>@i.Id</td>
 
-            <td>@i.Name</td>
-            <td>
-                <a href="/Order/OSView/@i.Id"><span class="glyphicon glyphicon-eye-open"></span> </a> |
-                <a href="/Order/OSEdit/@i.Id"><span class="glyphicon glyphicon-pencil"></span> </a> |
-                <a href="/Order/OSDelete/@i.Id"><span class="glyphicon glyphicon-trash"></span> </a>
-            </td>
-        </tr>
+                <td>@i.Name</td>
+                <td>
+                    <a href="/Order/OSView/@i.Id"><span class="glyphicon glyphicon-eye-open"></span> </a> |
+                    <a href="/Order/OSEdit/@i.Id"><span class="glyphicon glyphicon-pencil"></span> </a> |
+                    <a href="/Order/OSDelete/@i.Id"><span class="glyphicon glyphicon-trash"></span> </a>
+                </td>
+            </tr>
 
-    }
+        }
     </tbody>
     <tfoot>
         <tr>
