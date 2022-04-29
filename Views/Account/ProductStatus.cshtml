@@ -5,31 +5,41 @@
     ViewBag.Title = "ProductStatus";
 }
 
-
-<h2>Product Status List </h2>
-
-<table class="table table-striped table-bordered">
-    <tbody>
-        @foreach (var i in Model)
-        {
-            <tr>
-                <td>@i.Id</td>
-
-                <td>@i.Name</td>
-                <td>
-                    <a href="/Account/PSView/@i.Id"><span class="glyphicon glyphicon-eye-open"></span> </a>   |
-                    <a href="/Account/PSEdit/@i.Id"><span class="glyphicon glyphicon-pencil"></span> </a>   |
-                    <a href="/Account/PSDelete/@i.Id"><span class="glyphicon glyphicon-trash"></span> </a>
-                </td>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h2 class="panel-title">Product Status List </h2>
+    </div>
+    <table class="table table-striped table-bordered panel-body" ">
+        <thaed>
+            <tr class="text-primary">
+                <th>Id</th>
+                <th>Status</th>
+                <th>Actions</th>
             </tr>
-        }
+        </thaed>
+        <tbody>
+            @foreach (var i in Model)
+            {
+                <tr>
+                    <td>@i.Id</td>
 
-    </tbody>
-    <tfoot>
-        <tr>
-            <th>Id</th>
-            <th>Status</th>
-            <th>Actions</th>
-        </tr>
-    </tfoot>
-</table>
+                    <td>@i.Name</td>
+                    <td>
+                        <a href="/Account/PSView/@i.Id"><span class="glyphicon glyphicon-eye-open"></span> </a> |
+                        <a href="/Account/PSEdit/@i.Id"><span class="glyphicon glyphicon-pencil"></span> </a> |
+                        <a href="/Account/PSDelete/@i.Id"><span class="glyphicon glyphicon-trash"></span> </a>
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>Id</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </tfoot>
+    </table>
+
+</div>
