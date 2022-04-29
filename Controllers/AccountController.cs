@@ -31,7 +31,6 @@ namespace ShoppingApp.Controllers
             return View(products);
         }
         [HttpPost]
-
         public ActionResult Product(Product products, HttpPostedFileBase file)
         {
             string filename = DateTime.UtcNow.Ticks + ".jpg";
