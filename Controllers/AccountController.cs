@@ -25,8 +25,7 @@ namespace ShoppingApp.Controllers
         public ActionResult Product()
         {
 
-            //
-            // 
+
             List<Product> products = db.Products.ToList();
             return View(products);
         }
