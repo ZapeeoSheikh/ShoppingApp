@@ -24,8 +24,6 @@ namespace ShoppingApp.Controllers
         [HttpGet]
         public ActionResult Product()
         {
-
-
             List<Product> products = db.Products.ToList();
             return View(products);
         }
@@ -42,16 +40,29 @@ namespace ShoppingApp.Controllers
         [HttpGet]
         public ActionResult PEdit(int Id)
         {
-            Product product = db.Products.Where(o => o.Id == Id).FirstOrDefault();
+            //Dropdown kay lia likha ha 
+            ViewBag.ProductStatuses = db.ProductStatus.ToList();
+            ViewBag.Sellers = db.Users.Where(x => x.RoleId == 3).ToList();
 
+            //Show all products
+            Product product = db.Products.Where(o => o.Id == Id).FirstOrDefault();
             return View(product);
 
         }
         [HttpPost]
-        public ActionResult PEdit(Product product)
+        public ActionResult PEdit(Product product, HttpPostedFileBase file)
         {
+            //edit karna kay lia id pass ho rahi ha product ki
             Product dborders = db.Products.Where(o => o.Id == product.Id).FirstOrDefault();
 
+            // Image upload
+            string filename = DateTime.UtcNow.Ticks + ".jpg";
+            file.SaveAs(Server.MapPath("~/dbImage/") + filename);
+            product.Image = filename;
+            db.Products.Add(product);
+            db.SaveChanges();
+
+            //Edit product
             dborders.Name = product.Name;
             dborders.Description = product.Description;
             dborders.Price = product.Price;
@@ -60,6 +71,7 @@ namespace ShoppingApp.Controllers
             dborders.ProductStatusId = product.ProductStatusId;
             db.SaveChanges();
 
+            // Redirected towards Parent page
             return Redirect("/Account/Product");
         }
         public ActionResult PView(int Id)

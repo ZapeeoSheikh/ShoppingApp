@@ -197,6 +197,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="dbImage\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202204091509574_test.resx">

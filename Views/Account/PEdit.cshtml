@@ -1,39 +1,58 @@
 ﻿@using ShoppingApp.Models
 @model Product
-
 @{
     ViewBag.Title = "PEdit";
+    //Dropdown kay lia likha ha
+    List<ProductStatus> productStatuses = ViewBag.ProductStatuses as List<ProductStatus>;
+    List<User> sellers = ViewBag.Sellers as List<User>;
 }
 
-<h2>Product Edit</h2>
+<div class="panel panel-primary col-lg-push-4 col-lg-4">
+    <h2 class="panel-heading">Product Edit</h2>
+    <div class="panel-body ">
+        <form action="/Account/PEdit" method="post">
+            <input type="hidden" name="Id" value="@Model.Id" />
+            <div class="form-group">
+                <label for="email">Product Name :</label>
+                <input type="text" class="form-control" id="email" name="Name" value="@Model.Name">
+            </div>
+            <div class="form-group">
+                <label for="ps">Product Status Id:</label>
+                <select name="ProductStatusId" class="form-control">
+                    <option value="@Model.ProductStatusId">@Model.ProductStatus.Name</option>
+                    @foreach (var item in productStatuses)
+                    {
+                        <option value="@item.Id"> @item.Name</option>
+                    }
 
-<div class="panel-body">
-    <form action="/Account/PEdit" method="post">
-        <input type="hidden" name="Id" value="@Model.Id" />
-        <div class="form-group">
-            <label for="email">Product Name :</label>
-            <input type="text" class="form-control" id="email" name="Name" value="@Model.Name">
-        </div>
-        <div class="form-group">
-            <label for="ps">Product Status Id:</label>
-            <input type="number" class="form-control" id="ps" name="ProductStatusId" value="@Model.ProductStatusId">
-        </div>
-        <div class="form-group">
-            <label for="desc">Product Description :</label>
-            <input type="text" class="form-control" id="desc" name="Description" value="@Model.Description">
-        </div>
-        <div class="form-group">
-            <label for="phone">Product Price :</label>
-            <input type="text" class="form-control" id="phone" name="Price" value="@Model.Price">
-        </div>
-        <div class="form-group">
-            <label for="pwd">Product Image :</label>
-            <input type="file" class="form-control" id="pwd" name="Image" value="@Model.Image">
-        </div>
-        <div class="form-group">
-            <label for="si">Seller Id :</label>
-            <input type="number" class="form-control" id="si" name="SellerId" value="@Model.SellerId">
-        </div>
-        <button type="submit" class="btn btn-success">Edit Now</button>
-    </form>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="desc">Product Description :</label>
+                <input type="text" class="form-control" id="desc" name="Description" value="@Model.Description">
+            </div>
+            <div class="form-group">
+                <label for="phone">Product Price :</label>
+                <input type="text" class="form-control" id="phone" name="Price" value="@Model.Price">
+            </div>
+            <div class="form-group">
+                <label for="pwd">Product Image :</label>
+                <input type="file" class="form-control" accept="image/png , image/gif, image/jpeg" id="pwd" name="file" value="@Model.Image">
+            </div>
+            <div class="form-group">
+                <label for="si">Seller Id :</label>
+
+                <select name="SellerId" class="form-control">
+                    <option value="@Model.SellerId">@Model.Seller.Name</option>
+                    @foreach (var item in sellers)
+                    {
+                        <option value="@item.Id"> @item.Name</option>
+                    }
+
+                </select>
+            </div>
+
+            <button type="submit" class="btn btn-success">Edit Now</button>
+        </form>
+    </div>
 </div>
